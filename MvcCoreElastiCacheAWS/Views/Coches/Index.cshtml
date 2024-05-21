@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MvcCoreElastiCacheAWS.Models.Coche>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Coches XML AWS</h1>
+
+<table class="table table-success">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCoche)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imagen)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCoche)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modelo)
+            </td>
+            <td>
+                <img src="@item.Imagen" width="300" />
+            </td>
+            <td>
+                <a asp-controller="Coches" asp-action="Details"
+                    asp-route-id="@item.IdCoche" class="btn btn-outline-info">
+                    Details
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
