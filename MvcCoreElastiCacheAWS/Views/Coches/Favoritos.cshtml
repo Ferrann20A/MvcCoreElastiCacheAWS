@@ -9,7 +9,7 @@
         <div class="card" style="width: 18rem;">
             <img src="@car.Imagen" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">@car.Marca @car.Modelo</h5>
+                <h5 class="card-title text-warning">@car.Marca @car.Modelo</h5>
                 <a asp-controller="Coches" asp-action="DeleteFavorito"
                     asp-route-idcoche="@car.IdCoche" class="btn btn-danger">
                     Delete favorito
